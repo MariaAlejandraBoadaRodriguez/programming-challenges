@@ -12,13 +12,28 @@ var romanToInt = function(s) {
         D: 500,
         M: 1000
     }
-    
-    inputArray = s.slice('')
-    for(let i=0; i<inputArray.length;i++){
-        let number = 0
-        
-        
+
+    inputSeparado = s.split('')
+    let numero = 0
+    let array = []
+
+    for(let i = 0; i<inputSeparado.length;i++){
+        claveAleatoria = inputSeparado[i]
+        array.push(romanList[claveAleatoria])
     }
+
+    for (let i = 0; i < array.length - 1; i++) { 
+        if (array[i] < array[i+1]) {
+            numero = numero + (array[i+1] - array[i]);
+        }else {
+            numero = numero + array[i];
+        }
+        console.log(numero)
+    }
+    console.log("return "+numero)
+    
+    
+    
     
 };
 
