@@ -20,21 +20,19 @@ var romanToInt = function(s) {
         claveAleatoria = inputSeparado[i]
         array.push(romanList[claveAleatoria])
     }
-    array.push(0)
-    for (let i = 0; i < array.length - 1; i++) {
-        if (array[i] > array[i+1]) {
+
+    for (let i = 0; i < array.length - 1; i++) { 
+        if (array[i] < array[i+1]) {
+            numero = numero + (array[i+1] - array[i]);
+        }else {
             numero = numero + array[i];
-        }else if (array[i] === array[i+1]) {
-            numero = numero + array[i]
-        }else { 
-            numero = numero +(array[i+1] - array[i])
-            i++
         }
     }
-        if (array[array.length - 1] === array[array.length - 2]) {
-            numero = numero + array[array.length - 1]
-        }
-    return numero
+    console.log("return "+numero)
+    
+    
+    
+    
 };
 
 romanToInt('MCMXCIV')
